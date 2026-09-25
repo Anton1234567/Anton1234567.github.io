@@ -76,7 +76,7 @@
     <h1>Crew of Two</h1>
 
     <p>
-      Fastpaced FPS Boomershooter-style
+      Chaotic Couch-Co-op
     </p>
 
   </div>
@@ -159,9 +159,15 @@
             <h3>Gameplay</h3>
 
             <p>
-              Astro Plunder is a cartoony lightning fast FPS game where you use movement-based weapons 
-              that let you interact with the level and enemies in unique ways. 
-              Play as a pirate in a futuristic sci-fi world looking for treasure. 
+              Crew of Two is a couch-coop pirate game built around communication and teamwork. Both players must work together to keep their ship afloat while fighting enemy ships and surviving the dangers of the Killick Ocean.
+              <br><br>
+              Players are constantly faced with tasks that require cooperation. 
+              Both players need to work together to repair holes in the ship and remove water before the ship takes too much damage.
+               When engaging enemy ships, firing the cannons is also a team effort.
+                Two players are required to retrieve and load the cannonballs, while operating the cannon requires both players, one player aims the cannon while the other controls its horizontal movement.
+              <br><br>
+              As the situation becomes more chaotic, players have to communicate, prioritize what needs to be done and coordinate their actions. I
+              nspired by games such as Overcooked, the gameplay is designed around creating situations where neither player can handle everything alone, making teamwork essential to surviving the journey.
             </p>
 
             <p>
@@ -180,7 +186,7 @@
         <div class="project-feature reverse">
 
           <img
-            src="CrewOfTwoCode.png"
+            src="CrewOfTwoProgramming.png"
             alt="Crew of Two programming"
             class="feature-image"
           />
@@ -195,8 +201,14 @@
             </p>
 
             <p>
-              This included alot of movement mechanics and a way for to create modular weapons 
-              so that the Game Designer could easily adjust things without it becoming a problem.
+              My work on this project focused on developing the interaction system and creating a consistent way for players to interact with the different objects around the ship.
+              <br><br>
+              I implemented a physics-based detection sphere around the player that continuously detected nearby interactable objects.
+              The detected interactables were stored and sorted according to a priority value defined on each interactable.
+              <br><br>
+              This allowed the interaction system to automatically determine which object should be interacted with first, 
+              rather than requiring the player to repeatedly press the interaction button to cycle through nearby objects. 
+              This made interactions more predictable and helped create a smoother gameplay experience, particularly in situations where multiple interactables were positioned close together.
             </p>
 
           </div>
@@ -212,8 +224,11 @@
         <h2>Technical Implementation</h2>
 
         <p>
-          The project was developed using Unity and C#.
-          I was in charge of the weapon system and the movement. For the weapons I created a componentbased weapon that was able to add onto it's behaviour through the Decorator-Pattern.
+          The interaction system was developed in Unity using C#. Physics.OverlapSphere was used to detect interactable objects within a defined range around the player.
+          <br><br>
+          The different interactables were built using inheritance, with a common base interactable class handling shared functionality while individual interactables implemented their own behaviour. This allowed different objects to use the same detection system while maintaining their own unique functionality.
+          <br><br>
+          The detection system continuously updated the available interactables as objects entered and left the player's interaction range. Each interactable could also be configured through the Unity Inspector, including its interaction priority, allowing the system to be tuned without modifying the underlying code.
         </p>
 
         <div class="project-technologies">
@@ -235,18 +250,26 @@
         <h2>Project Links</h2>
 
         <p>
-          Check it out on Itch!(Not up to date with the most recent additions and systems)
+          Check it out on Itch or the trailer on Youtube!
         </p>
 
         <div class="project-links">
 
           <a
-            href="https://pipeturn.itch.io/astro-plunder"
+            href="https://dummaaporentertainment.itch.io/crew-of-two"
             class="project-button"
             target="_blank"
             rel="noopener noreferrer"
           >
             Itch.io
+          </a>
+                    <a
+            href="https://www.youtube.com/watch?v=7UXHxnFm1v8&t=2s"
+            class="project-button"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+          Trailer
           </a>
 
         </div>

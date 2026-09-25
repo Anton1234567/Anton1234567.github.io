@@ -128,14 +128,11 @@
         <h2>About the Project</h2>
 
         <p>
-          Play as Augusta and Hastings as they live the fantastical
-          story of their grandma as she tells them of her young days
-          as a pirate on the Killick Ocean.
+          Astro Plunder is a cartoony lightning fast FPS game where you use movement-based weapons that let you interact with the level and enemies in unique ways.
         </p>
 
         <p>
-          Work together to fight off enemy ships, endure the
-          approaching storm and whatever the storm might bring.
+          Play as a pirate in a futuristic sci-fi world looking for treasure.
         </p>
 
       </section>
@@ -157,9 +154,11 @@
             <h3>Gameplay</h3>
 
             <p>
-              Astro Plunder is a cartoony lightning fast FPS game where you use movement-based weapons 
-              that let you interact with the level and enemies in unique ways. 
-              Play as a pirate in a futuristic sci-fi world looking for treasure. 
+              The idea behind AstroPlunder is that you take on missions as a bounty hunter and space pirate, where your weapon is also a part of your movement. Each weapon provides a different way of navigating the environment, encouraging the player to adapt their movement and playstyle around their loadout.
+              <br><br>
+              For example, the shotgun can blast the player into the air, allowing them to gain vertical momentum and reach otherwise inaccessible areas. A sword allows the player to dash in any direction and lock onto enemies, turning combat into a fast and aggressive form of movement. The pistol allows the player to slow down time while airborne, increasing their damage the longer they remain in the air.
+              <br><br>
+              The goal is to make movement and combat feel like one interconnected system, where choosing a weapon also means choosing how you move through the world.
             </p>
 
             <p>
@@ -185,15 +184,21 @@
   <h3>Programming</h3>
 
   <p>
-    My work on the project focused on implementing and
-    developing gameplay systems in C# using Unity.
+    My work on the project focused on implementing and developing the Movement and Weapon systems in C# using Unity.
   </p>
 
   <p>
-    This included a lot of movement mechanics and a modular
-    weapon system that allowed the Game Designer to easily
-    adjust and expand the weapons without requiring major
-    changes to the underlying systems.
+    For the weapon system, I created a component-based architecture designed to make the weapons modular and easy to extend.
+    This allowed the team to create new weapons and iterate on existing ones without having to rewrite the underlying systems. 
+    I used the Factory Pattern to handle weapon creation and the Decorator Pattern to add new features and mechanics to existing weapons.
+    <br>
+    <br>
+    The first iteration of the movement system became increasingly complex as different weapons and mechanics started affecting player movement.
+    To address this, I redesigned the system around a Finite State Machine. This separated the different movement behaviours into individual states, 
+    improving cohesion and making the system easier to maintain and extend.
+    <br>
+    <br>
+    I also created a custom Unity Inspector for configuring the different movement states, allowing the team to quickly tune movement values without modifying the underlying code.
   </p>
 
 </div>
@@ -216,8 +221,14 @@
         <h2>Technical Implementation</h2>
 
         <p>
-          The project was developed using Unity and C#.
-          I was in charge of the weapon system and the movement. For the weapons I created a componentbased weapon that was able to add onto it's behaviour through the Decorator-Pattern.
+          The project was developed in Unity using C#. Player input was handled through Unity's Input System, while player movement was built around Rigidbody-based physics.
+          <br><br>
+          Custom physics calculations were used to control acceleration, gravity, friction and momentum. Raycasts and linecasts were used for ground detection and to determine how the player interacts with different surfaces and slopes.
+          <br><br>
+          Interfaces were used to define common functionality between systems while reducing dependencies between individual implementations. ScriptableObjects were used to store configurable data and state-specific values, allowing gameplay parameters to be adjusted directly through the Unity Inspector.
+          <br><br>
+          The combination of these systems allowed the gameplay code to remain separated into smaller, reusable components while still being easy to configure and iterate on during development. Git was used for version control and collaborative development throughout the project.
+        
         </p>
 
         <div class="project-technologies">
