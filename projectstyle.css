@@ -592,4 +592,53 @@ max-width: 100%;
 .project-images img {
 height: auto;
 }
+
+/* =========================
+   MULTIPLE FEATURE IMAGES
+========================= */
+
+.feature-images {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  width: 100%;
+  max-width: 500px;
+
+  margin: auto;
+}
+
+.feature-images .feature-image {
+  width: 100%;
+  max-width: 500px;
+  max-height: 260px;
+
+  object-fit: contain;
+
+  margin: 0;
+}
+
+
+/* =========================
+   PROGRAMMING FEATURE
+========================= */
+
+.project-feature.reverse {
+  grid-template-columns: 1fr 1fr;
+}
+
+
+/* Text on the LEFT */
+
+.project-feature.reverse .feature-text {
+  order: 2;
+}
+
+
+/* Images on the RIGHT */
+
+.project-feature.reverse .feature-images {
+  order: 1;
+}
+
 }
