@@ -337,7 +337,7 @@ ABOUT
 ========================= */
 
 .about {
-background: var(--white);
+background: var(--light-blue);
 }
 
 .about-text {
@@ -359,7 +359,7 @@ PROJECTS
 ========================= */
 
 .projects {
-background: var(--light-blue);
+background: var(--white);
 }
 
 /* Project grid */
@@ -547,18 +547,6 @@ border-radius: 30px;
 
 font-weight: bold;
 
-transition:
-background-color 0.2s ease,
-color 0.2s ease,
-transform 0.2s ease;
-}
-
-.skills-list li:hover {
-background: var(--bright-blue);
-
-color: var(--white);
-
-transform: translateY(-2px);
 }
 
 /* =========================
